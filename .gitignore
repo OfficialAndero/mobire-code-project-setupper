@@ -1,0 +1,37 @@
+# --- Laravel Zero / PHP ---
+.env
+.phpunit.result.cache
+/vendor/
+/builds/
+/node_modules/
+/dist/
+*.log
+# --- PHPStorm (.idea) ---
+.idea/
+*.iml
+*.iws
+*.ipr
+# --- Visual Studio Code (.vscode) ---
+*.swp
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# --- Operating Systems ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+# php fixer cache
+.php-cs-fixer.cache

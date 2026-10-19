@@ -1,0 +1,24 @@
+services:
+  app_php:
+    container_name: app_php
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:80"
+      - "9004:9004"
+    volumes:
+      - .:/var/www/html
+  app_db:
+    image: mariadb:11.4-noble
+    container_name: app_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - app-data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_USER: admin
+      MARIADB_PASSWORD: admin
+volumes:
+  app-data:

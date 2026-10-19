@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Automaatne PHP CS Fixer enne commit'i
+
+echo "Running PHP CS Fixer..."
+
+./vendor/bin/php-cs-fixer fix
+
+git add .
+
+echo "PHP CS Fixer finished."

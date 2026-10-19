@@ -1,0 +1,42 @@
+FROM php:8.4-apache
+# 1. Install the helper script for PHP extensions
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions
+WORKDIR /var/www/html
+# 2. Install System Dependencies & Node.js in fewer layers
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    default-mysql-client \
+    docker-compose \
+    curl \
+    ca-certificates \
+    gnupg \
+    zip \
+    unzip \
+    && mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list \
+    && apt-get update && apt-get install -y nodejs \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# 3. Install all PHP extensions in ONE go
+# This script handles libpng, libicu, libmagickwand, etc. automatically
+RUN install-php-extensions \
+    mysqli \
+    bcmath \
+    pdo_mysql \
+    soap \
+    zip \
+    gettext \
+    gd \
+    intl \
+    imagick \
+    xdebug
+# 4. Tooling & Configuration
+RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer \
+    && curl -sLS https://uploader.codecov.io/latest/linux/codecov -o /usr/bin/codecov \
+    && chmod +x /usr/bin/codecov \
+    && a2enmod rewrite headers \
+    && mkdir -p /var/log/xdebug
+# 5. Apache Configuration
+COPY docker/apache-vhost.conf /etc/apache2/sites-available/000-default.conf
+RUN a2enmod rewrite
+
