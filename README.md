@@ -72,7 +72,7 @@ This command is shown to illustrate the tool’s workflow. This repository is pr
 
 6. Install Laravel application
 
-7. Install development tools,
+7. Install development tools
 
 
 The project uses prepared template files to keep the generated configuration consistent between projects.
