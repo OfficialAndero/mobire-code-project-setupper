@@ -59,7 +59,7 @@ This command is shown to illustrate the tool’s workflow. This repository is pr
 
 ## How It Works
 
-```text
+
 Run: php blueprint app:create PROJECT_NAME
                 |
                 v
@@ -79,7 +79,7 @@ Install Laravel application
                 |
                 v
 Install development tools
-```
+
 
 The project uses prepared template files to keep the generated configuration consistent between projects.
 
