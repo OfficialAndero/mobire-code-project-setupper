@@ -48,7 +48,7 @@ Visual Studio Code and Bitbucket were also used during development.
 The graduation project documents the following command, run from the tool's working environment:
 
 ```bash
-php blueprint app:create PROJECT_NAME
+**php blueprint app:create PROJECT_NAME**
 ```
 
 Replace `PROJECT_NAME` with the name of the Laravel project to create.
