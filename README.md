@@ -51,7 +51,7 @@ The graduation project documents the following command, run from the tool's work
 **php blueprint app:create PROJECT_NAME**
 
 
-Replace `PROJECT_NAME` with the name of the Laravel project to create.
+Replace **PROJECT_NAME** with the name of the Laravel project to create.
 
 The tool then runs the setup steps in sequence, including project directory creation, configuration setup, Docker container startup, Laravel installation and development-tool installation.
 
@@ -83,7 +83,7 @@ During development, the tool was tested by creating projects with different name
 
 - Project directories and configuration files were generated in the expected locations.
 - Docker containers could be recreated and started.
-- The generated Laravel application opened in a browser at `localhost:8000`.
+- The generated Laravel application opened in a browser at **localhost:8000**.
 - PHPStan and PHP CS Fixer were installed and available.
 
 The graduation report describes successful practical testing of these steps. This section does not claim that a separate automated test suite was run.
