@@ -60,25 +60,25 @@ This command is shown to illustrate the tool’s workflow. This repository is pr
 ## How It Works
 
 
-Run: php blueprint app:create PROJECT_NAME
+Run: php blueprint app:create PROJECT_NAME,
                 |
                 v
-Check and create project directory
+Check and create project directory,
                 |
                 v
-Copy configuration templates
+Copy configuration templates,
                 |
                 v
-Prepare Docker environment
+Prepare Docker environment,
                 |
                 v
-Create and start containers
+Create and start containers,
                 |
                 v
-Install Laravel application
+Install Laravel application,
                 |
                 v
-Install development tools
+Install development tools,
 
 
 The project uses prepared template files to keep the generated configuration consistent between projects.
