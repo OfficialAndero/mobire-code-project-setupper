@@ -88,7 +88,7 @@ During development, the tool was tested by creating projects with different name
 
 The graduation report describes successful practical testing of these steps. This section does not claim that a separate automated test suite was run.
 
-In the graduation report, the estimated setup time was reduced from **30–60 minutes of manual work to under 2 minutes** using the automated process. This is a project-reported comparison, not a benchmark across different computers or environments.
+In the graduation report, the estimated setup time was reduced from **30-60 minutes of manual work to under 2 minutes** using the automated process. This is a project-reported comparison, not a benchmark across different computers or environments.
 
 ## Known Limitations and Future Improvements
 
